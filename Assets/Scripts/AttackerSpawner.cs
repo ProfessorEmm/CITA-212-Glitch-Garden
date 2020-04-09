@@ -10,26 +10,23 @@ public class AttackerSpawner : MonoBehaviour
     [SerializeField] float fltMaxSpawnDelay = 5f;
     [SerializeField] Attacker attackerPrefab;
 
-    bool spawn = true;
+    bool boolSpawn = true; 
 
     IEnumerator Start()
     {
-        while (spawn)
+        while (boolSpawn)
         { 
             // delay before spawning
             yield return new WaitForSeconds(UnityEngine.Random.Range(fltMinSpawnDelay, fltMaxSpawnDelay));
             SpawnAttacker();
-        }
-    }
+        } // while
+    } // Start()
 
     private void SpawnAttacker()
     {
+        // instantiate an attacker, randomly between min and max spawn delay
         Instantiate(attackerPrefab, transform.position, transform.rotation);
-    }
+    } // SpawnAttacker()
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+    
+} // class AttackerSpawner

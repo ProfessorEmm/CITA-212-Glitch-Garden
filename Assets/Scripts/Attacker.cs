@@ -9,6 +9,7 @@ public class Attacker : MonoBehaviour
     
     void Update()
     {
+        // speed to move attacker
         transform.Translate(Vector2.left * fltCurrentSpeed * Time.deltaTime);
     } // Update
 

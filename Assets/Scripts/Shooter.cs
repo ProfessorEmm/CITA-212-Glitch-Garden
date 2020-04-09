@@ -8,6 +8,7 @@ public class Shooter : MonoBehaviour
 
     public void Fire()
     {
+        // create a projectile and move it based on the position of the gun 
         Instantiate(projectile, gun.transform.position, transform.rotation);
     } // Fire()
-} // 
+} // class Shooter()
