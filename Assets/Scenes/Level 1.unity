@@ -783,7 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8186ec1d89ff651409764a3ca788f3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 137753965}
+  GOdefender: {fileID: 137753965}
 --- !u!1001 &2072628765
 PrefabInstance:
   m_ObjectHideFlags: 0
