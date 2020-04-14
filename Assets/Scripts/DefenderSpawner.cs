@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class DefenderSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject GOdefender;
+    Defender defender;
     private void OnMouseDown()
     {
         // spawn the defender
         SpawnDefender(GetSquareClicked());
 
     } // OnMouseDown()
+
+    public void SetSelectedDefender(Defender defenderToSelect)
+    {
+        // determining which type of defender we want to select
+        defender = defenderToSelect;
+    } // SetSelectedDefender
 
     private Vector2 GetSquareClicked()
     {
@@ -35,9 +41,9 @@ public class DefenderSpawner : MonoBehaviour
     private void SpawnDefender(Vector2 V2roundedPos)
     {
         // instantiate a defender with NO rotation 
-        GameObject GOnewDefender =
-            Instantiate(GOdefender, V2roundedPos, 
-            Quaternion.identity) as GameObject;
+        Defender newDefender =
+            Instantiate(defender, V2roundedPos, 
+            Quaternion.identity) as Defender;
         Debug.Log(V2roundedPos);
     } // SpawnDefender()
 
