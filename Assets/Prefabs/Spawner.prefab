@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8718878824808367637}
+  - component: {fileID: 1697962648}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -30,3 +31,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697962648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718878824808367636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7974864d737e642b24e475f965f1f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fltMinSpawnDelay: 2
+  fltMaxSpawnDelay: 5
+  attackerPrefab: {fileID: 6981056015242107383, guid: 1bfe33d8caeb9db40b832a739262b820,
+    type: 3}
