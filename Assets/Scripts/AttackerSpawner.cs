@@ -25,8 +25,14 @@ public class AttackerSpawner : MonoBehaviour
     private void SpawnAttacker()
     {
         // instantiate an attacker, randomly between min and max spawn delay
-        Instantiate(attackerPrefab, transform.position, transform.rotation);
+        Attacker newAttacker = Instantiate
+            (attackerPrefab, transform.position, transform.rotation) 
+            as Attacker;
+        // The parent of the instantiated Attacker is the transform.
+        // This means that the Spawner object for each lane is the 
+        // parent of the new Attacker. This will allow us to track 
+        // the lanes where Attackers have been spawned.
+        newAttacker.transform.parent = transform;
     } // SpawnAttacker()
-
     
 } // class AttackerSpawner
