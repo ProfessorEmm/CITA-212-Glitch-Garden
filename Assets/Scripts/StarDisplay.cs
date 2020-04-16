@@ -25,6 +25,11 @@ public class StarDisplay : MonoBehaviour
         
     } // UpdateDisplay()
 
+    public bool HaveEnoughStars(int amount)
+    {
+        return intStars >= amount;
+    }
+
     public void AddStars(int amount)
     {
         // increase our number of stars
@@ -33,7 +38,7 @@ public class StarDisplay : MonoBehaviour
 
     } // AddStars()
 
-    public void SpendingStars(int amount)
+    public void SpendStars(int amount)
     {
         // only decrease if there is something available to decrease
         if (intStars >= amount)
