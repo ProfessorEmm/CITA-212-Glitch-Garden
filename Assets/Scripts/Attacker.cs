@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,18 +13,42 @@ public class Attacker : MonoBehaviour
     {
         // speed to move attacker
         transform.Translate(Vector2.left * fltCurrentSpeed * Time.deltaTime);
-    } // Update
+        UpdateAnimationState();
+    } // Update()
+
+    private void UpdateAnimationState()
+    {
+        if (!GOcurrentTarget)
+        {
+            // stop attacking once the defender is destroyed
+            GetComponent<Animator>().SetBool("isAttacking", false);
+        }
+    } // UpdateAnimationState()
 
     public void SetMovementSpeed(float speed)
     {
         fltCurrentSpeed = speed;
-    } // SetMovementSpeed
+    } // SetMovementSpeed()
 
     public void Attack(GameObject target)
     {
         GetComponent<Animator>().SetBool("isAttacking", true);
         GOcurrentTarget = target;
-    } // Attack
+    } // Attack()
+
+    public void StrikeCurrentTarget(float damage)
+    {
+        if (!GOcurrentTarget)
+        {
+            return;
+        }
+        Health health = GOcurrentTarget.GetComponent<Health>();
+
+        if (health)
+        {
+            health.DealDamage(damage);
+        }
+    } // StrikeCurrentTarget()
 
 } // class Attacker
 
