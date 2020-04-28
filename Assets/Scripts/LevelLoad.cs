@@ -30,4 +30,9 @@ public class LevelLoad : MonoBehaviour {
         SceneManager.LoadScene(intCurrentSceneIndex + 1);
     } // LoadNextScene()
 
+    public void LoadYouLose()
+    {
+        SceneManager.LoadScene("LoseScreen");
+    }
+
 } // class LevelLoad

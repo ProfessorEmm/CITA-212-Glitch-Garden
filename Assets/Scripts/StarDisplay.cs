@@ -48,6 +48,6 @@ public class StarDisplay : MonoBehaviour
             UpdateDisplay();
         } // if
         
-    } // AddStars()
+    } // SpendStars()
 
 } // class StarDisplay
