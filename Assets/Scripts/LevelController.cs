@@ -6,6 +6,8 @@ public class LevelController : MonoBehaviour
 {
     [SerializeField] float fltWaitToLoad = 4f;
     [SerializeField] GameObject GOwinLabel;
+    [SerializeField] GameObject GOLoseLabel;
+
     int intNumberOfAttackers = 0;
     bool boolLevelTimerFinished = false;
 
@@ -13,6 +15,9 @@ public class LevelController : MonoBehaviour
     {
         // don't display Win Level text
         GOwinLabel.SetActive(false);
+        // don't display Lose Level text
+        GOLoseLabel.SetActive(false);
+
     }
 
     public void AttackerSpawned()
@@ -36,6 +41,14 @@ public class LevelController : MonoBehaviour
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(fltWaitToLoad);
         FindObjectOfType<LevelLoader>().LoadNextScene();
+    } // HandleWinCondition()
+
+    public void HandleLoseCondition()
+    {
+        // display Lose Level text
+        GOLoseLabel.SetActive(true);
+        // Set time to zero
+        Time.timeScale = 0;
     }
 
     public void LevelTimerFinished()
