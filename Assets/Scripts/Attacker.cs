@@ -8,7 +8,20 @@ public class Attacker : MonoBehaviour
     [Range(0f, 5f)]
     float fltCurrentSpeed = 1f;
     GameObject GOcurrentTarget;
-    
+
+    private void Awake()
+    {
+        // when an Attacker is born
+        FindObjectOfType<LevelController>().AttackerSpawned();
+    } // Awake()
+
+    private void OnDestroy()
+    {
+        // when an Attacker is killed
+        FindObjectOfType<LevelController>().AttackerKilled();
+
+    } // OnDestroy()
+
     void Update()
     {
         // speed to move attacker

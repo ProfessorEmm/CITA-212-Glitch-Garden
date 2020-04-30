@@ -23,6 +23,11 @@ public class AttackerSpawner : MonoBehaviour
         } // while
     } // Start()
 
+    public void StopSpawning()
+    {
+        boolSpawn = false;
+    }
+
     private void SpawnAttacker()
     {
         // randomly spawn an attacker

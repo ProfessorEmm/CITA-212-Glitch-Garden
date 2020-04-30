@@ -32,7 +32,7 @@ public class LivesDisplay : MonoBehaviour
         if (intLives <= 0)
         {
             // no lives remaining, go to LoseScreen
-            FindObjectOfType<LevelLoad>().LoadYouLose();
+            FindObjectOfType<LevelLoader>().LoadYouLose();
         }
 
     } // SpendStars()
