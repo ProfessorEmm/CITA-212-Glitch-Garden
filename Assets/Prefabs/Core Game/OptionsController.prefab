@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 0}
   fltDefaultVolume: 0.8
+  difficultySlider: {fileID: 0}
+  fltDefaultDifficulty: 0
