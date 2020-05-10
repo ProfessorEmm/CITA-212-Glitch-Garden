@@ -1,10 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DefenderSpawner : MonoBehaviour
 {
     Defender defender;
+    GameObject GOdefenderParent;
+    const string strDEFENDER_PARENT_NAME = "Defenders";
+
+    private void Start()
+    {
+        CreateDefenderParent();
+
+    } // Start()
+
+    private void CreateDefenderParent()
+    {
+        GOdefenderParent = GameObject.Find(strDEFENDER_PARENT_NAME);
+        if (!GOdefenderParent)
+        {
+            GOdefenderParent = new GameObject(strDEFENDER_PARENT_NAME);
+        }
+    }
+
     private void OnMouseDown()
     {
         // spawn the defender
@@ -58,6 +77,7 @@ public class DefenderSpawner : MonoBehaviour
         Defender newDefender =
             Instantiate(defender, V2roundedPos, 
             Quaternion.identity) as Defender;
+        newDefender.transform.parent = GOdefenderParent.transform;
     } // SpawnDefender()
 
 } // class DefenderSapwner
